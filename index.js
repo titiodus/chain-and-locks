@@ -26,7 +26,6 @@ showFinePrint();
 
 // to show the image on the card 
 myPhoto.addEventListener("change", function() {
-  // alert(myPhoto.value)
   const reader = new FileReader();
   reader.addEventListener("load", () => {
     imgUploader = reader.result
@@ -36,16 +35,30 @@ myPhoto.addEventListener("change", function() {
 })
 
 // to show the value in the input field on the card
-const getInputs = () => {
-   nameLabel.innerHTML = fullName.value;
-  schoolLabel.innerHTML = school.value;
-  trackLabel.innerHTML = track.value;
-  idLabel.innerHTML = idNumber.value;
-  
-}
+fullName.addEventListener("change", function() {
+  nameLabel.innerHTML = fullName.value;
+});
 
-getInputs();
-// console.log(getInputs)
+school.addEventListener("change", function() {
+  schoolLabel.innerHTML = school.value;
+});
+
+track.addEventListener("change", function() {
+  trackLabel.innerHTML = track.value;
+});
+
+idNumber.addEventListener("change", function() {
+  idLabel.innerHTML = idNumber.value;
+});
+
+// // to show the value in the input field on the card
+// const getInputs = () => {
+//   nameLabel.innerHTML = fullName.value;
+//   schoolLabel.innerHTML = school.value;
+//   trackLabel.innerHTML = track.value;
+//   idLabel.innerHTML = idNumber.value; 
+// }
+// getInputs();
 
 // To reset the card
 const resetCard = () => {
@@ -57,25 +70,16 @@ const resetCard = () => {
   idLabel.innerHTML = "";
   finePrint.style.display = 'none';
 }
-
 resetCard();
 
-// Creating the event listener for the select button
-document
-  .getElementById("select-btn")
-  .addEventListener("click", function(event) {
-    event.preventDefault();
-    getInputs();
-    showFinePrint();
+// // Creating the event listener for the select button
+// document
+//   .getElementById("select-btn")
+//   .addEventListener("click", function(event) {
+//     event.preventDefault();
     
-  });
-
-// // Creating the event listener for the select button v2
-// document.getElementById("select-btn").addEventListener("click", function(event) {
-//   event.preventDefault();
-//   getInputs() ? resetCard : getInputs()
-// });
-
+    
+//   });
 
 // Function to get the card for the download 
 const dwnloadCard = () => {
@@ -85,21 +89,25 @@ const dwnloadCard = () => {
     downloadLink.click();
   });
 }
+// Function to disable the download button
+function disableDownloadBtn() {
+  nameLabel.innerHTML = "";
+  schoolLabel.innerHTML = "";
+  trackLabel.innerHTML = "";
+  idLabel.innerHTML = "";
+  downloadBtn.disabled = true;
+};
+disableDownloadBtn();
 
-  // Creating the event listener for the download button
-downloadBtn.addEventListener("click", function(event) {
-  event.preventDefault();
+// function to enable the download button
+function enableDownloadBtn() {
+  downloadBtn.disabled = false;
+  console.log("download button active");
+  showFinePrint();
   dwnloadCard();
-  resetCard();
-  // document.querySelector('.card-info').reset();
-  // idPhoto.style.backgroundImage = "url('')";
-  // nameLabel.innerHTML = "Name: ";
-  // schoolLabel.innerHTML = "School: ";
-  // trackLabel.innerHTML = "Track: ";
-  // idLabel.innerHTML = "ID: ";
-  // finePrint.style.display = 'none';
-  
-})
+  resetCard(); 
+};
+enableDownloadBtn();
 
 // creating the qrcode
 let qrcode = new QRCode(document.getElementById("qr-code"), {
