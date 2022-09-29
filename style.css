@@ -1,0 +1,214 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background-image: url("images/email-pattern.webp");
+
+}
+
+/* LAYOUT */
+
+.container {
+    /* display: flex;
+    flex-wrap: wrap; */
+    max-width: 370px;
+    width: 90%;
+    margin: 40px auto;
+    /* justify-content: space-between; */
+    box-shadow: rgb(38, 57, 77)0px 20px 30px -10px;
+    border-radius: 10px;
+}
+
+.coy-logo {
+    width: 100%; 
+    max-width: 70px;
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+    
+}
+
+.logo-name {
+    width: 370px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.logo-name {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.banner {
+    width: 100%;
+    /* max-width: 300px; */
+    background-color: #6772E5;
+    margin-bottom: 10px;
+    padding: 10px;
+    
+}
+
+#id-photo {
+   width: 100%;
+   max-width: 90px;
+   height: 90px;
+   margin: 0;
+   padding: 0;
+   border: 1px solid #676767;
+   background-position: center; 
+   background-size: cover;
+}
+
+.bottom-container {
+    /* width: 185px; */
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    background-color: #E8E3DD;    
+}
+
+.photos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #fcf5ed;
+    width: 370px;
+    margin: 0 auto;
+
+}
+
+.id-card,
+.qr-code {
+    background: #fefefe;
+    /* height: 49%; */
+    /* text-align: left; */
+    /* padding-left: 5px; */
+}
+
+.qr-code {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+
+
+#name-label 
+#id-label,
+#school-label,
+#track-label,
+p {
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+
+#name-label {
+    padding-top: 5px;
+}
+
+#track-label {
+    margin-bottom: 20px;
+}
+
+#id-label,
+#school-label,
+#track-label {
+    margin-top: 12px;
+}
+
+.top-container {
+    display: block;
+    max-width: 370px;
+    /* border-left: 2px solid #676767; */
+    background: #d3d3d3;
+    margin: 0 auto;
+    /* padding-top: 15px; */
+    /* padding-left: 10px; */
+    
+}
+
+form {
+    max-width: 182px;
+    max-width: 80%; 
+    margin: 0 auto; 
+    padding-top: 20px 
+}
+
+#btns {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0px;
+}
+
+
+#select-btn,
+#download-btn {
+    background-color: #6772E5;
+    border: 1px solid #676767;
+    color: white;
+    padding: 5px 8px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 19px 5px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#my-photo,
+#fullname,
+#school,
+#track,
+#idNumber{
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 3px 5px;
+    border-radius: 5px;
+    border: 1px solid #676767;
+    cursor: pointer;
+}
+
+/* TYPOGRAPHY */
+
+#fullname,
+#school,
+#track,
+#idNumber {
+    font-weight: 300;
+    font-family: 'Roboto', sans-serif;
+}
+ 
+
+span {
+    font-size: 14px;
+    font-weight: 700;
+    font-family: 'Roboto', sans-serif;
+    color: black;
+    margin: 0;
+}
+
+#fine-print {
+    font-size: 8px;
+    font-weight: 700;
+    font-family: 'Roboto', sans-serif;
+    color: black;
+    text-align: center;
+    font-weight: 700;
+    display: none;
+}
+
+.sch-name {
+    padding: 5px;
+    font-weight: 700;
+}
+
+

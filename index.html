@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="style.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>ALTSCHOOL ID CARD WITH QRCODE</title>
+  </head>
+  <body>
+    <main class="container">
+    <div class="top-container">
+      <form class="card-info" action="#" method="post">
+        <label for="my-photo">Select a file:</label>
+        <input
+          type="file"
+          id="my-photo"
+          name="my-photo"
+          accept="image/png, image/jpg, image/jpeg"
+        />
+        <label for="fullname">Full Name</label>
+        <input
+          type="text"
+          id="fullname"
+          name="fullname"
+          placeholder="FirstName LastName"
+          required
+        />
+        <label for="idNumber">ID Number</label>
+        <input
+          type="text"
+          id="idNumber"
+          name="idNumber"
+          placeholder="Enter your ID number"
+          required
+        />
+        <label for="school">Select School</label>
+        <select name="school" id="school">
+          <option value="">Choose School</option>
+          <option value="School of Data">School of Data</option>
+          <option value="School of Engineering">School of Engineering</option>
+          <option value="School of Products">School of Product</option>
+        </select>
+        <label for="track">Select Track</label>
+        <select name="track" id="track">
+          <option value="">Choose Track</option>
+          <option value="Backend Engineering">Backend Engineering</option>
+          <option value="Cloud Engineering">Cloud Engineering</option>
+          <option value="Data Analytics">Data Analytics</option>
+          <option value="Data Engineering">Data Engineering</option>
+          <option value="Data Science">Data Science</option>
+          <option value="Frontend Engineering">Frontend Engineering</option>
+          <option value="Product Design">Product Design</option>
+          <option value="Product Management">Product Management</option>
+          <option value="Product Marketing">Product Marketing</option>
+        </select>
+        <div id="btns">
+          <button id="select-btn">Select</button>
+          <a href="#" id="download-link" download="MyAltschoolIdCard.png"></a>
+          <button id="download-btn">Download</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="bottom-container">
+      <div class="card">
+        <div class="photos">
+          <div class="logo-name">
+            <img
+              src="images/altschlogo.svg"
+              class="coy-logo"
+              alt="The Altschool Africa logo"
+            />
+            <p class="sch-name">AltSchool Africa</p>
+          </div>
+
+          <div class="banner"></div>
+
+          <div id="id-photo"></div>
+        </div>
+
+        <div class="id-card">
+          <p id="name-label"><span>NAME: </span></p>
+          <p id="id-label"><span>ID: </span></p>
+          <p id="school-label"><span>SCHOOL: </span></p>
+          <p id="track-label"><span>TRACK: </span></p>
+          <p id="fine-print">Valid Until April 2023 REMOTE: FULTIME</p>  
+        </div>
+        
+        <div class="qr-code">
+          <div id="qr-code"></div>
+        </div>
+        
+      </div>
+    </div> 
+    </main>
+    <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
