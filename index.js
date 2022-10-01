@@ -71,13 +71,13 @@ const resetCard = () => {
 }
 resetCard();
 
-// // Creating the event listener for the reset button
-// document
-//   .getElementById("reset-btn")
-//   .addEventListener("click", function(event) {
-//     event.preventDefault(); 
-//     resetCard();
-//   });
+// Creating the event listener for the reset button
+document
+  .getElementById("reset-btn")
+  .addEventListener("click", function(event) {
+    event.preventDefault(); 
+    resetCard();
+  });
 
 // Function to get the card for the download 
 const dwnloadCard = () => {
