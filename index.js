@@ -13,18 +13,17 @@ const downloadBtn = document.getElementById("download-btn");
 const finePrint = document.querySelector('#fine-print');
 let imgUploader = "";
 
-// FUnction to display/hide fine print
-
+// Function to display/hide fine print
 const showFinePrint = () => {
   if(finePrint.style.display === 'none') {
     finePrint.style.display = 'block';
   }else{
-    finePrint.style.display = 'none';
+    finePrint.style.display === 'none';
   }
 }
 showFinePrint();
 
-// to show the image on the card 
+// To show the image on the card 
 myPhoto.addEventListener("change", function() {
   const reader = new FileReader();
   reader.addEventListener("load", () => {
@@ -72,13 +71,12 @@ const resetCard = () => {
 }
 resetCard();
 
-// // Creating the event listener for the select button
+// // Creating the event listener for the reset button
 // document
-//   .getElementById("select-btn")
+//   .getElementById("reset-btn")
 //   .addEventListener("click", function(event) {
-//     event.preventDefault();
-    
-    
+//     event.preventDefault(); 
+//     resetCard();
 //   });
 
 // Function to get the card for the download 
@@ -89,6 +87,7 @@ const dwnloadCard = () => {
     downloadLink.click();
   });
 }
+
 // Function to disable the download button
 function disableDownloadBtn() {
   nameLabel.innerHTML = "";
@@ -96,18 +95,31 @@ function disableDownloadBtn() {
   trackLabel.innerHTML = "";
   idLabel.innerHTML = "";
   downloadBtn.disabled = true;
+  finePrint.style.display = 'none';
 };
 disableDownloadBtn();
 
 // function to enable the download button
 function enableDownloadBtn() {
   downloadBtn.disabled = false;
-  console.log("download button active");
-  showFinePrint();
-  dwnloadCard();
-  resetCard(); 
+  // showFinePrint();
+  // dwnloadCard();
 };
 enableDownloadBtn();
+
+// Creating the event listener for the download button
+  downloadBtn.addEventListener("click", function() { 
+    if (nameLabel.innerHTML === "" || schoolLabel.innerHTML === "" || trackLabel.innerHTML === "" || idLabel.innerHTML === "") {
+      disableDownloadBtn();
+      console.log("Please fill all the fields");
+      
+    }else{
+      enableDownloadBtn();
+      showFinePrint();
+      dwnloadCard();
+      console.log("Download successful");
+    }
+  });
 
 // creating the qrcode
 let qrcode = new QRCode(document.getElementById("qr-code"), {
