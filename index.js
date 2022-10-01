@@ -50,15 +50,6 @@ idNumber.addEventListener("change", function() {
   idLabel.innerHTML = idNumber.value;
 });
 
-// // to show the value in the input field on the card
-// const getInputs = () => {
-//   nameLabel.innerHTML = fullName.value;
-//   schoolLabel.innerHTML = school.value;
-//   trackLabel.innerHTML = track.value;
-//   idLabel.innerHTML = idNumber.value; 
-// }
-// getInputs();
-
 // To reset the card
 const resetCard = () => {
   document.querySelector('.card-info').reset();
@@ -90,33 +81,29 @@ const dwnloadCard = () => {
 
 // Function to disable the download button
 function disableDownloadBtn() {
-  nameLabel.innerHTML = "";
-  schoolLabel.innerHTML = "";
-  trackLabel.innerHTML = "";
-  idLabel.innerHTML = "";
   downloadBtn.disabled = true;
   finePrint.style.display = 'none';
 };
-disableDownloadBtn();
+// disableDownloadBtn();
 
 // function to enable the download button
 function enableDownloadBtn() {
   downloadBtn.disabled = false;
-  // showFinePrint();
-  // dwnloadCard();
+  finePrint.style.display = 'block';
 };
-enableDownloadBtn();
+// enableDownloadBtn();
 
 // Creating the event listener for the download button
-  downloadBtn.addEventListener("click", function() { 
-    if (nameLabel.innerHTML === "" || schoolLabel.innerHTML === "" || trackLabel.innerHTML === "" || idLabel.innerHTML === "") {
+  downloadBtn.addEventListener("click", function(event) {
+     event.preventDefault();
+    if (nameLabel.innerHTML === "" && schoolLabel.innerHTML === "" && trackLabel.innerHTML === "" && idLabel.innerHTML === "") {
       disableDownloadBtn();
       console.log("Please fill all the fields");
       
-    }else{
+    }else if (nameLabel.innerHTML !== "" && schoolLabel.innerHTML !== "" && trackLabel.innerHTML !== "" && idLabel.innerHTML !== "") {
       enableDownloadBtn();
-      showFinePrint();
       dwnloadCard();
+      showFinePrint();
       console.log("Download successful");
     }
   });
